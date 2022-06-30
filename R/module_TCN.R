@@ -11,7 +11,7 @@ tcServer <- function(id, cnt){
   moduleServer(id, function(input, output, session){
     output$tcn_plot <- renderEcharts4r({
       variaciones |> 
-        filter(country == cnt,
+        filter(country == 'dom',
                variable == 'tcv') |> 
         select(fecha, value, var_mensual, var_interanual) |> 
         e_charts(fecha) |> 
