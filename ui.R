@@ -1,0 +1,107 @@
+# UI
+ui <- fluidPage(
+  titlePanel(title = 'Indicadores Macroeconómicos'),
+  navlistPanel(
+    id = "tabset",
+    widths = c(2,10),
+    fluid = 'TRUE',
+    tabPanel('República Dominicana', 
+             fluidPage(
+               h3('Precios'),
+               fluidRow(VarimUI('dom_inf')),
+               hr(),
+               h3('Actividad Económica'),
+               fluidRow(VarimUI('dom_imae')),
+               hr(),
+               h3('Sector Externo'),
+               fluidRow(tcUI('dom_tcn')),
+               hr(),
+               h3('Sector Financiero'),
+               fluidRow(tiUI('dom_ti'))
+             )),
+    tabPanel('Costa Rica', 
+             fluidPage(
+               h3('Precios'),
+               fluidRow(VarimUI('cri_inf')),
+               hr(),
+               h3('Actividad Económica'),
+               fluidRow(VarimUI('cri_imae')),
+               hr(),
+               h3('Sector Externo'),
+               fluidRow(tcUI('cri_tcn')),
+               hr(),
+               h3('Sector Financiero'),
+               fluidRow(tiUI('cri_ti'))
+             )),
+    tabPanel('El Salvador', 
+             fluidPage(
+               h3('Precios'),
+               fluidRow(VarimUI('slv_inf')),
+               hr(),
+               h3('Actividad Económica'),
+               fluidRow(VarimUI('slv_imae')),
+               hr(),
+               h3('Sector Externo'),
+               fluidRow(tcUI('slv_tcn')),
+               hr(),
+               h3('Sector Financiero'),
+               fluidRow(tiUI('slv_ti'))
+             )),
+    tabPanel('Guatemala', 
+             fluidPage(
+               h3('Precios'),
+               fluidRow(VarimUI('gtm_inf')),
+               hr(),
+               h3('Actividad Económica'),
+               fluidRow(VarimUI('gtm_imae')),
+               hr(),
+               h3('Sector Externo'),
+               fluidRow(tcUI('gtm_tcn')),
+               hr(),
+               h3('Sector Financiero'),
+               fluidRow(tiUI('gtm_ti'))
+             )),
+    tabPanel('Honduras', 
+             fluidPage(
+               h3('Precios'),
+               fluidRow(VarimUI('hnd_inf')),
+               hr(),
+               h3('Actividad Económica'),
+               fluidRow(VarimUI('hnd_imae')),
+               hr(),
+               h3('Sector Externo'),
+               fluidRow(tcUI('hnd_tcn')),
+               hr(),
+               h3('Sector Financiero'),
+               fluidRow(tiUI('hnd_ti'))
+             )),
+    tabPanel('Nicaragua', 
+             fluidPage(
+               h3('Precios'),
+               fluidRow(VarimUI('nic_inf')),
+               hr(),
+               h3('Actividad Económica'),
+               fluidRow(VarimUI('nic_imae')),
+               hr(),
+               h3('Sector Externo'),
+               fluidRow(tcUI('nic_tcn')),
+               hr(),
+               h3('Sector Financiero'),
+               fluidRow(tiUI('nic_ti'))
+             )),
+    tabPanel('Panamá', 
+             fluidPage(
+               h3('Precios'),
+               fluidRow(VarimUI('pnm_inf')),
+               hr(),
+               h3('Actividad Económica'),
+               fluidRow(VarimUI('pnm_imae')),
+               hr(),
+               h3('Sector Externo'),
+               fluidRow(tcUI('pnm_tcn')),
+               hr(),
+               h3('Sector Financiero'),
+               fluidRow(tiUI('pnm_ti'))
+             ))
+  )
+)
