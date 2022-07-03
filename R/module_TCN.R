@@ -7,16 +7,16 @@ tcUI <- function(id){
 }
 
 # Server
-tcServer <- function(id, cnt){
+tcServer <- function(id, cnt, var, nombre){
   moduleServer(id, function(input, output, session){
     output$tcn_plot <- renderEcharts4r({
       variaciones |> 
-        filter(country == 'dom',
-               variable == 'tcv') |> 
+        filter(country == cnt,
+               variable == var) |> 
         select(fecha, value, var_mensual, var_interanual) |> 
         e_charts(fecha) |> 
         e_bar(value,
-              name = 'Venta') |> 
+              name = nombre) |> 
         e_line(var_interanual,
                symbol = 'none',
                name = 'Interanual',
@@ -28,9 +28,7 @@ tcServer <- function(id, cnt){
         e_tooltip(trigger = "axis") |> 
         e_y_axis(scale = TRUE) |>
         e_datazoom(start = 80) |> 
-        e_hide_grid_lines() |> 
-        e_title(text = 'Tipo de cambio nominal', 
-                subtext = "Variación (%)")
+        e_hide_grid_lines()
     })
   })
 }
