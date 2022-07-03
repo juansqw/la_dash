@@ -9,7 +9,7 @@ tiUI <- function(id){
 tiServer <- function(id, cnt){
   moduleServer(id, function(input, output, session){
     output$ti_plot <- renderEcharts4r({
-      macro_db |> 
+      datosM |> 
         filter(country == cnt,
                variable %in% c('tia', 'tip', 'tpm')) |> 
         mutate(value = round(value, digits = 2),
@@ -24,8 +24,7 @@ tiServer <- function(id, cnt){
                symbol = 'none') |> 
         e_tooltip(trigger = "axis") |> 
         e_y_axis(scale = TRUE) |>
-        e_datazoom(start = 80) |> 
-        e_title(text = 'Tasas de Interés', subtext = "(%)")
+        e_datazoom(start = 80)
     })
   }
   )

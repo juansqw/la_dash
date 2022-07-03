@@ -9,7 +9,7 @@ VarimUI <- function(id){
 }
 
 # Server
-VarimServer <- function(id, cnt, var, ttl){
+VarimServer <- function(id, cnt, var){
   moduleServer(id, function(input, output, session){
     output$inflation_plot <- renderEcharts4r({
       variaciones |> 
@@ -25,8 +25,7 @@ VarimServer <- function(id, cnt, var, ttl){
                name = 'Mensual') |> 
         e_tooltip(trigger = "axis") |> 
         e_y_axis(scale = TRUE) |>
-        e_datazoom(start = 80) |> 
-        e_title(text = ttl, subtext = "Variación (%)")
+        e_datazoom(start = 80)
     })
   }
   )
